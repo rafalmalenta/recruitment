@@ -1,0 +1,30 @@
+button{
+    width: 100%;
+    color: rgb(252, 19, 11);
+    font-weight: bold;
+    background-color: linen;
+    
+}
+table{
+    font-size: 20px
+}
+@media screen and (max-width: 768px) {
+     
+    th{
+        display: none;
+    }
+    td {
+        border-bottom: 1px solid #ddd;
+        margin: 0px auto;
+
+        display: block;
+        font-size: 1.3rem;
+        text-align: right;
+    }
+    td::before{
+    content: attr(data-label);
+    float: left;    
+    margin-left: 2px;
+    }
+        
+ }
