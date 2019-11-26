@@ -7,12 +7,16 @@ import { User } from "../models/User"
   providedIn: 'root'
 })
 export class UserService {
-  usersURL:string = "https://gorest.co.in/public-api/users?_format=json&access-token=XxMkjZ15GADpkwXDmUszesK9mK5w_UXaK0dJ";
+  usersURL:string = "https://gorest.co.in/public-api/users?_format=json&access-token=XxMkjZ15GADpkwXDmUszesK9mK5w_UXaK0dJ&";
   constructor(private http:HttpClient) { }
 
     getUsers():Observable<any>{
       return this.http.get<any>(`${this.usersURL}`)
     }
+    getUsersPage(page):Observable<any>{
+      return this.http.get<any>(`${this.usersURL}page=${page}`)
+    }
+
 
   
 }

@@ -6,17 +6,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './pages/users/users.component';
 import { PostsComponent } from './pages/posts/posts.component';
+import { StartComponent } from './pages/start/start.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    PostsComponent,   
+    PostsComponent,
+    StartComponent,
+    PaginatorComponent,   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule,    
     HttpClientModule,
   ],
   providers: [],

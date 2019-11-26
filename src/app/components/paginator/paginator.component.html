@@ -1,0 +1,11 @@
+<select>
+    <option *ngFor="let dummy of ' '.repeat(pageCount).split(''), let x = index" 
+        value={{x+1}} 
+        name="page" 
+        [attr.selected]="(x+1)==currentPage ? 'selected' : null"
+        [routerLink]="['/users', x+1]"
+        >
+        <a >{{x+1}}</a>
+        </option>
+</select>
+{{currentPage}}

@@ -1,3 +1,7 @@
 *{
     font-size: 22px;
 }
+div {
+    width: 300px;
+    margin: 0px auto;
+}

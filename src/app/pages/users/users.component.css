@@ -1,22 +1,32 @@
 button{
     width: 100%;
+    padding: 1px;
     color: rgb(252, 19, 11);
     font-weight: bold;
-    background-color: linen;
-    
+    background-color: linen;    
+}
+.giga__button{
+    width: 100%;
+    padding-top:1em;
+    padding-bottom: 1em;
 }
 table{
     font-size: 20px
 }
-@media screen and (max-width: 768px) {
-     
+td button{
+    width: 33.333%;
+}
+th{
+    
+    width: 20%;
+}
+@media screen and (max-width: 768px) {     
     th{
         display: none;
     }
     td {
         border-bottom: 1px solid #ddd;
         margin: 0px auto;
-
         display: block;
         font-size: 1.3rem;
         text-align: right;
