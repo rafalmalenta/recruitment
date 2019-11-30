@@ -22,7 +22,7 @@ export class UserService {
 
     getUserById(id):Observable<any>{
       //console.log(`${this.usersURL}/${id}${this.querybase}`)
-      return this.http.get(`${this.usersURL}/${id}${this.querybase}`)
+      return this.http.get(`${this.usersURL}/${id}${this.querybase}${this.key}`)
     }
     getUsersPage(page):Observable<any>{
       return this.http.get<any>(`${this.usersURL}${this.querybase}${this.key}page=${page}`)
@@ -30,7 +30,9 @@ export class UserService {
     createUser(user):Observable<any>{
       return this.http.post<any>(`${this.usersURL}${this.querybase}`,user,httpOptions)
     }
-
+    editUser(user):Observable<any>{
+      return this.http.put<any>(`${this.usersURL}/${user.id}${this.querybase}`,user,httpOptions)
+    }
 
   
 }

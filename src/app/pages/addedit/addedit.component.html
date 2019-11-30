@@ -11,7 +11,7 @@
     <input type="text" name="address" [(ngModel)]="user.address" />
     <button *ngIf="user.id=='';else elseBlock " (click)="create(user)" >Add user </button>
     <ng-template #elseBlock>
-    <button type="submit">Edit User</button>
+    <button type="button" (click)="edit(user)">Edit User</button>
     </ng-template>
     <button type="button" (click)="cancel()">Cancel</button>    
 </form>

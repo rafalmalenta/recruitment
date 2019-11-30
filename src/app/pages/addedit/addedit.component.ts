@@ -39,13 +39,18 @@ export class AddeditComponent implements OnInit {
   create(user){    
     this.userService.createUser(user).subscribe(response=>{  
       if(response._meta.code==200){
-        alert("zapisano")
+        alert("Created")
         this.location.back();       
-      }    
-      
+      }          
     }); 
-    
-
+  }
+  edit(user){
+    this.userService.editUser(user).subscribe(response=>{  
+      if(response._meta.code==200){
+        alert("Edited")
+        this.location.back();          
+      }          
+    }); 
   }
 
   ngOnInit() {
