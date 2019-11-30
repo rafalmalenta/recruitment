@@ -11,8 +11,6 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
 import { AddeditComponent } from './pages/addedit/addedit.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -29,8 +29,17 @@ export class UsersComponent implements OnInit {
       }
    })
    this.route.paramMap.subscribe(params => {
-        this.currentPage = parseInt(params.get("page"));
-      
+        this.currentPage = parseInt(params.get("page"));      
+    }); 
+    
+  }
+  delete(user){
+    this.userService.deleteUser(user).subscribe(response=>{   
+      if(response._meta.code==204){
+        alert("deleted");
+        this.router.navigate(['users',this.currentPage])
+        this.pagerCount = response._meta.pageCount; 
+      }         
     });  
   }
   ngOnInit() {     

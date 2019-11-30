@@ -33,6 +33,8 @@ export class UserService {
     editUser(user):Observable<any>{
       return this.http.put<any>(`${this.usersURL}/${user.id}${this.querybase}`,user,httpOptions)
     }
-
+    deleteUser(user):Observable<any>{
+      return this.http.delete<any>(`${this.usersURL}/${user.id}${this.querybase}`,httpOptions)
+    }
   
 }
