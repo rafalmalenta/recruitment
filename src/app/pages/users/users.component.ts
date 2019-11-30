@@ -2,8 +2,8 @@ import { Component, OnInit,Input, OnChanges } from '@angular/core';
 import {Observable} from "rxjs"
 import { User } from "../../models/User";
 import { UserService } from "../../services/user.service";
-import { ActivatedRoute,Router } from '@angular/router';
-import {NavigationStart, NavigationEnd} from "@angular/router"
+import { ActivatedRoute,Router,NavigationStart, NavigationEnd } from '@angular/router';
+
 
 @Component({
   selector: 'app-users',
@@ -13,7 +13,7 @@ import {NavigationStart, NavigationEnd} from "@angular/router"
 export class UsersComponent implements OnInit {
 
   users: User[];
-  pageCount: number;
+  pagerCount: number;
   currentPage:number;
   constructor(private userService:UserService, private route:ActivatedRoute, private router:Router) {
     this.router.events.subscribe((event) => {
@@ -24,8 +24,7 @@ export class UsersComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.userService.getUsersPage(this.currentPage).subscribe(response=>{      
           this.users = response.result;
-          this.pageCount = response._meta.pageCount;
-          console.log(this.currentPage)
+          this.pagerCount = response._meta.pageCount;          
         });  
       }
    })
@@ -34,17 +33,8 @@ export class UsersComponent implements OnInit {
       
     });  
   }
-  ngOnInit() {   
-    
-    
-    // this.userService.getUsersPage(this.currentPage).subscribe(response=>{      
-    //   this.users = response.result;
-    //   this.pageCount = response._meta.pageCount
-    // });      
+  ngOnInit() {     
 
   }
  
-
-  
-
 }

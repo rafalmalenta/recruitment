@@ -1,5 +1,5 @@
 <div>
-    <button class="giga__button">Create user</button>
+    <button class="giga__button" routerLink="/addedit">Create user</button>
     <table width=100%>
         <tr>
         <th width=20px >First name</th>
@@ -12,11 +12,11 @@
             <td data-label="Last name:">{{user.last_name}}</td>
             <td data-label="Email:">{{user.email}}</td>
             <td>
-                <button (click)="view(user.id)">View</button>
-                <button [routerLink]="['/user', user.id]">Edit</button>
+                <button >View</button>
+                <button [routerLink]="['/addedit', '22']">Edit</button>
                 <button>Delete</button>
             </td>
         </tr>
     </table>
-    <app-paginator [pageCount]=pageCount [currentPage]=currentPage></app-paginator>
+    <app-paginator [pageCount]=pagerCount [currentPage]=currentPage></app-paginator>
 </div>
