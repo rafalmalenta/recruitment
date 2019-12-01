@@ -9,6 +9,7 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { StartComponent } from './pages/start/start.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { AddeditComponent } from './pages/addedit/addedit.component';
+import { UserdetailComponent } from './pages/userdetail/userdetail.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AddeditComponent } from './pages/addedit/addedit.component';
     PostsComponent,
     StartComponent,
     PaginatorComponent,
-    AddeditComponent,       
+    AddeditComponent,
+    UserdetailComponent,       
   ],
   imports: [
     BrowserModule,

@@ -11,9 +11,9 @@ import { ActivatedRoute,Router,NavigationStart, NavigationEnd } from '@angular/r
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
+  routestr:string="users";
   users: User[];
-  pagerCount: number;
+  pageCount: number;
   currentPage:number;
   constructor(private userService:UserService, private route:ActivatedRoute, private router:Router) {
     this.router.events.subscribe((event) => {
@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.userService.getUsersPage(this.currentPage).subscribe(response=>{      
           this.users = response.result;
-          this.pagerCount = response._meta.pageCount;          
+          this.pageCount = response._meta.pageCount;          
         });  
       }
    })
@@ -38,7 +38,7 @@ export class UsersComponent implements OnInit {
       if(response._meta.code==204){
         alert("deleted");
         this.router.navigate(['users',this.currentPage])
-        this.pagerCount = response._meta.pageCount; 
+        this.pageCount = response._meta.pageCount; 
       }         
     });  
   }

@@ -1,11 +1,11 @@
-<select>    
+<select (change)="reload($event.target.value,URL)">    
     <option *ngFor="let dummy of ' '.repeat(pageCount).split(''), let x = index" 
         value={{x+1}} 
         name="page" 
         [attr.selected]="(x+1)==currentPage ? 'selected' : null"
-        [routerLink]="['/users', x+1]"
+        
         >
-        {{x+1}}
+        page {{x+1}}
         </option>    
 </select>
 {{currentPage}}

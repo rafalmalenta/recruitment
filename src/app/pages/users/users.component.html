@@ -12,11 +12,11 @@
             <td data-label="Last name:">{{user.last_name}}</td>
             <td data-label="Email:">{{user.email}}</td>
             <td>
-                <button >View</button>
+                <button [routerLink]="['/userdetail',user.id]">View</button>
                 <button [routerLink]="['/addedit', user.id]">Edit</button>
                 <button (click)="delete(user)">Delete</button>
             </td>
         </tr>
     </table>
-    <app-paginator [pageCount]=pagerCount [currentPage]=currentPage></app-paginator>
+    <app-paginator [pageCount]=pageCount [currentPage]=currentPage [URL]=routestr></app-paginator>
 </div>
